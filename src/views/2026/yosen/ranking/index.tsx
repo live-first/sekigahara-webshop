@@ -10,7 +10,7 @@ export const YosenRankingView = () => {
 
   useEffect(() => {
     fetch(
-      'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLinD9fha5DD8_Pd9c7FKPUVuluvHWEar7pRdzvAlqCh1PM8-0COu3Z4RI6ws1y7A5yTt5zyq-otAhua38VnAK6NVFDGy2OHll05YjsWXiR6WXj-vF9XH8zkKSO_wzbInUmg4IfFyMuM7aBTV7NeuNUpLVLEfbLAQ7yrteuEtbHhnAt41VlxlRrv4M3oZ5XJ77Amyll5OwhZuRO-oz9_ASRDHPr9dXTW0_ZC5hShSdAXDyfsonug2z21phgtVBPjPSStxWi9VASHLVDK5iUgbHM5AtJAU8jzS39-lOVy&lib=Mutf3B7HfdlvVscNszRI483pjz42KUVZk',
+      'https://script.google.com/macros/s/AKfycbzjk6JVQIDUXrRIFCSHqSL5xDPFm5jTnTs16ZCele-A09keIhmgFxZo1j-KlT2jBQupdw/exec',
       { mode: 'cors' },
     )
       .then((response) => response.json())
@@ -36,7 +36,7 @@ export const YosenRankingView = () => {
   }, [])
 
   return (
-    <div className='flex flex-col gap-6 pb-12 p-2 md:px-20 lg:px-36'>
+    <div className='flex flex-col gap-6 pb-40 p-2 md:px-20 lg:px-60'>
       <YosenTitle title='〜 RANKING 〜' />
       {ranking && (
         <div className='flex flex-col w-full text-end text-sm text-black py-2'>
