@@ -1,3 +1,67 @@
 import { YosenAccordionProps } from '@/templates/accordion/YosenAccordion'
 
-export const edoEvents: YosenAccordionProps[] = []
+export const edoEvents: YosenAccordionProps[] = [
+  {
+    cName: 'edo',
+    title: '其の一',
+    date: '2026年5月9日（土）',
+    open: '17:00',
+    start: '17:20',
+    place: 'GOTANDA G7',
+    artists:
+      "ADMIRAL×BANQUET／Harley Queen／Re:M!ND／ラビットビット／オトメルキュール／I's Merry Go Round／MiDi ON!／@youuuuu!!!／New Crown",
+    ticket: 'https://t-dv.com/yosen_edo_1',
+    image1: 'https://sekigahara-idolwars.net/2026/yosen/edo/260509_11.jpg',
+    image2: '',
+  },
+  {
+    cName: 'edo',
+    title: '其の二',
+    date: '2026年5月10日（日）',
+    open: '11:30',
+    start: '12:00',
+    place: 'シアターマーキュリー新宿',
+    artists: 'Coloration／ヒップバーン／オトメルキュール／vVibe!／あもるてぃえ／LEVEL7／MiDi ON!',
+    ticket: 'https://t-dv.com/yosen_edo_2',
+    image1: 'https://sekigahara-idolwars.net/2026/yosen/edo/260510_21.jpg',
+    image2: '',
+  },
+  {
+    cName: 'edo',
+    title: '其の三',
+    date: '2026年5月10日（日）',
+    open: '17:00',
+    start: '17:30',
+    place: 'シアターマーキュリー新宿',
+    artists:
+      "Aproof／Coloration／iROTORiDOLLY／ラビットビット／vVibe!／LEVEL7／I's Merry Go Round／BabyDoll",
+    ticket: 'https://t-dv.com/yosen_edo_3',
+    image1: 'https://sekigahara-idolwars.net/2026/yosen/edo/260510_31.jpg',
+    image2: '',
+  },
+  {
+    cName: 'edo',
+    title: '其の四',
+    date: '2026年5月10日（日）',
+    open: '11:00',
+    start: '11:30',
+    place: '浅草花劇場',
+    artists: 'Yo2La／BrainBeat／melnoir／Otomeria／NEOTOKYO-TRIBE',
+    ticket: 'https://t-dv.com/yosen_edo_4',
+    image1: 'https://sekigahara-idolwars.net/2026/yosen/edo/260510_41.jpg',
+    image2: undefined,
+  },
+  {
+    cName: 'edo',
+    title: '其の五',
+    date: '2026年5月10日（日）',
+    open: '16:00',
+    start: '16:30',
+    place: '浅草花劇場',
+    artists:
+      'にとくり。／ひとつキラリ／ADMIRAL×BANQUET／ゆにきゅーと／ヒップバーン／オトメルキュール／Otomeria／あもるてぃえ／NEOTOKYO-TRIBE／MiDi ON!',
+    ticket: 'https://t-dv.com/yosen_edo_5',
+    image1: 'https://sekigahara-idolwars.net/2026/yosen/edo/260510_51.jpg',
+    image2: '',
+  },
+]

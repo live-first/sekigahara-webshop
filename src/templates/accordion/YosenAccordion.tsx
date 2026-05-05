@@ -59,8 +59,8 @@ export const YosenAccordion = (props: YosenAccordionProps) => {
           <></>
         )}
         <div className='pt-2'>
-          <Img src={image1 ?? ''} alt='' />
-          <Img src={image2 ?? ''} alt='' />
+          {image1 && <Img src={image1 ?? ''} alt='' />}
+          {image2 && <Img src={image2 ?? ''} alt='' />}
         </div>
       </AccordionDetails>
     </Accordion>
