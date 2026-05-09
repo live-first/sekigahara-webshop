@@ -19,6 +19,7 @@ export type RankingUnit = UnitType & {
 }
 
 export type UnitType = {
+  id?: number
   name: string
   yomi?: string
   img: ImgType

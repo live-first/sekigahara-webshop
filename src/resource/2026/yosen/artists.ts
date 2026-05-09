@@ -2,6 +2,7 @@ import { UnitProps } from '@/templates/unitBox'
 
 export const artists: UnitProps[] = [
   {
+    id: 52517,
     name: 'AiMEL!!-あいめる-',
     yomi: '',
     img: {
@@ -18,6 +19,7 @@ export const artists: UnitProps[] = [
     withColle: 'eAPPfu1xaOU7kkY4X8ZSfzYoB813',
   },
   {
+    id: 52136,
     name: "I's Merry Go Round",
     yomi: '',
     img: {
@@ -34,6 +36,7 @@ export const artists: UnitProps[] = [
     withColle: 'lNfjJi4W4JXKat6hbQ9eBVYEFE72',
   },
   {
+    id: 52143,
     name: 'IDOL★ST∀R MINE',
     img: {
       src: 'https://sekigahara-idolwars.net/2026/yosen/artists/IDOL★ST∀R MINE.jpg',
@@ -49,6 +52,7 @@ export const artists: UnitProps[] = [
     withColle: 'UxFVyixVQQcMhDvRXrem2MB6LLh1',
   },
   {
+    id: 51999,
     name: 'ADMIRAL×BANQUET',
     yomi: 'アドミラルバンケット',
     img: {
@@ -65,6 +69,7 @@ export const artists: UnitProps[] = [
     withColle: 'Pn5x5zohhkNebKgzau5CDetzvh33',
   },
   {
+    id: 52007,
     name: 'あもるてぃえ',
     yomi: '',
     img: {
@@ -81,6 +86,7 @@ export const artists: UnitProps[] = [
     withColle: 'SkTqLAFMV6eRFapDvp51xw4B2ft1',
   },
   {
+    id: 52016,
     name: 'anemoreel',
     yomi: '',
     img: {
@@ -97,6 +103,7 @@ export const artists: UnitProps[] = [
     withColle: 'LCckb63PnsUjP6IPWo0BfWGyzko1',
   },
   {
+    id: 52144,
     name: 'Aproof',
     yomi: '',
     img: {
@@ -112,8 +119,8 @@ export const artists: UnitProps[] = [
     other: '',
     withColle: '4gTqLJhE8VeSkl5SQeq1rAqflq62',
   },
-
   {
+    id: 52037,
     name: '@youuuuu!!!',
     yomi: 'あっとゆー',
     img: {
@@ -130,6 +137,7 @@ export const artists: UnitProps[] = [
     withColle: 'GLFG8mtUrvdwqChPfUXGBB0cg2I3',
   },
   {
+    id: 52031,
     name: 'image',
     yomi: 'いまーじゅ',
     img: {
@@ -146,6 +154,7 @@ export const artists: UnitProps[] = [
     withColle: 'sirgD1H5dbcrTgTbtYPrQHpKAec2',
   },
   {
+    id: 52067,
     name: 'INOiZe↯',
     yomi: 'いのいず',
     img: {
@@ -162,6 +171,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 52038,
     name: 'iROTORiDOLLY',
     yomi: 'いろとりどりー',
     img: {
@@ -178,6 +188,7 @@ export const artists: UnitProps[] = [
     withColle: 'TPerbnL7VjcP4zm4oTd21qbfEJH3',
   },
   {
+    id: 52000,
     name: '「いつかのネバーランド」',
     yomi: '',
     img: {
@@ -194,6 +205,7 @@ export const artists: UnitProps[] = [
     withColle: 'IPrH2cL5L9QeLFQqa6qzq7r7Fxs2',
   },
   {
+    id: 52205,
     name: 'オトメルキュール',
     img: {
       src: 'https://sekigahara-idolwars.net/2026/yosen/artists/オトメルキュール.jpeg',
@@ -209,6 +221,7 @@ export const artists: UnitProps[] = [
     withColle: 'myfF2TxBLvRv7romQFNmDOPyZGu1',
   },
   {
+    id: 52993,
     name: 'Otomeria',
     yomi: '',
     img: {
@@ -225,6 +238,7 @@ export const artists: UnitProps[] = [
     withColle: 'iGmXV2S9tdOIJUZBf9hVFnyZG4J3',
   },
   {
+    id: 52240,
     name: 'Coloration',
     yomi: '',
     img: {
@@ -242,6 +256,7 @@ export const artists: UnitProps[] = [
     withColle: 'oKupNxot4wVElherrsjribVDKo42',
   },
   {
+    id: 52203,
     name: "colorin'c",
     yomi: 'カラリンク',
     img: {
@@ -258,6 +273,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 52017,
     name: 'ギミラブ！',
     yomi: '',
     img: {
@@ -274,6 +290,7 @@ export const artists: UnitProps[] = [
     withColle: 'hDfXraawtqae8tuWXYED959wm0R2',
   },
   {
+    id: 52010,
     name: 'キューハチパーセント！',
     yomi: '',
     img: {
@@ -290,6 +307,7 @@ export const artists: UnitProps[] = [
     withColle: 'gXy3zCbnF1WGwSaABNZlv5g399k1',
   },
   {
+    id: 52199,
     name: '逆転ねこぱんちっ！',
     yomi: '',
     img: {
@@ -305,6 +323,7 @@ export const artists: UnitProps[] = [
     withColle: 'ovsHlI0QaaVDCAO5e4bmvsfHhyZ2',
   },
   {
+    id: 56011,
     name: 'SANUGLOW',
     yomi: 'サンヌグロウ',
     img: {
@@ -321,6 +340,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 52526,
     name: 'Squall Line',
     yomi: '',
     img: {
@@ -337,6 +357,7 @@ export const artists: UnitProps[] = [
     withColle: 'vMNLhNZD3lPKu0Aqx8Ql5JKhDNh2',
   },
   {
+    id: 52023,
     name: 'Chuu♡Cute',
     yomi: '',
     img: {
@@ -353,6 +374,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 52151,
     name: 'Twilight BlooM.',
     yomi: '',
     img: {
@@ -369,6 +391,7 @@ export const artists: UnitProps[] = [
     withColle: 'WixrxoFPBRMKvIjx69jRCZk4DV33',
   },
   {
+    id: 52154,
     name: 'tune time capsule',
     yomi: '',
     img: {
@@ -385,6 +408,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 18537,
     name: 'にとくり。',
     img: {
       src: 'https://sekigahara-idolwars.net/2026/yosen/artists/にとくり。.png',
@@ -400,6 +424,7 @@ export const artists: UnitProps[] = [
     withColle: 'lhNlLHC25Xheqfm1RATXkcrl0I33',
   },
   {
+    id: 52134,
     name: 'New Crown',
     yomi: '',
     img: {
@@ -416,6 +441,7 @@ export const artists: UnitProps[] = [
     withColle: 'eptuyd6oXXf6ALCOtWMy2oFz9DE2',
   },
   {
+    id: 52001,
     name: 'Nody',
     yomi: 'のーでぃー',
     img: {
@@ -447,6 +473,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 52009,
     name: 'Harley Queen',
     img: {
       src: 'https://sekigahara-idolwars.net/2026/yosen/artists/Harley Queen.jpg',
@@ -462,6 +489,7 @@ export const artists: UnitProps[] = [
     withColle: 'c81Q8OxL7ZeClaKwGWgNvHSIhnY2',
   },
   {
+    id: 52254,
     name: 'HIGH SPY DOLL',
     yomi: '',
     img: {
@@ -478,6 +506,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 37551,
     name: 'ひとつキラリ',
     yomi: '',
     img: {
@@ -494,6 +523,7 @@ export const artists: UnitProps[] = [
     withColle: '3HqK7glCVsR7HUNXdNwfLcHjzNc2',
   },
   {
+    id: 52140,
     name: 'ヒップバーン',
     yomi: '',
     img: {
@@ -511,6 +541,7 @@ export const artists: UnitProps[] = [
     withColle: 'R2JdPyP1jnO2zHi3lvH1RhPrAAk1',
   },
   {
+    id: 52018,
     name: '秘密結社フローリス',
     yomi: '',
     img: {
@@ -526,6 +557,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 52520,
     name: 'FIRST DREAM',
     yomi: '',
     img: {
@@ -543,6 +575,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 52258,
     name: 'BrainBeat',
     yomi: 'ぶれいんびーと',
     img: {
@@ -559,6 +592,7 @@ export const artists: UnitProps[] = [
     withColle: 'bJHUwVCBUGYh7r4no9TgMCv5b913',
   },
   {
+    id: 52198,
     name: 'BLUE REGRET。',
     yomi: '',
     img: {
@@ -574,6 +608,7 @@ export const artists: UnitProps[] = [
     withColle: 'HurlCTynW3f4WFLKzYqTDdTZJ7K2',
   },
   {
+    id: 51995,
     name: 'POPING CANDY.',
     yomi: 'ぽぴんぐきゃんでぃ',
     img: {
@@ -590,6 +625,7 @@ export const artists: UnitProps[] = [
     withColle: 'cjl4ogbTBaR1l3zFJ7eB7wLJHOl1',
   },
   {
+    id: 55672,
     name: 'vVibe!',
     yomi: '',
     img: {
@@ -606,6 +642,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 52141,
     name: 'プラチナリボン',
     yomi: '',
     img: {
@@ -622,6 +659,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 52484,
     name: 'BabyDoll',
     yomi: '',
     img: {
@@ -638,6 +676,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 52653,
     name: 'Mihiro',
     yomi: '',
     img: {
@@ -653,6 +692,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 52041,
     name: 'MiDi ON!',
     yomi: '',
     img: {
@@ -669,6 +709,7 @@ export const artists: UnitProps[] = [
     withColle: 'r7rL4X1hw7edtEl57uPShhlqEz22',
   },
   {
+    id: 52052,
     name: 'Maycry Liz',
     yomi: '',
     img: {
@@ -685,6 +726,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 52042,
     name: 'melnoir',
     yomi: '',
     img: {
@@ -701,6 +743,7 @@ export const artists: UnitProps[] = [
     withColle: '8DgaS17zV0T54QOU3W3ee1CgJin2',
   },
   {
+    id: 52005,
     name: 'めろでぃらびっと',
     img: {
       src: 'https://sekigahara-idolwars.net/2026/yosen/artists/めろでぃらびっと.png',
@@ -716,6 +759,7 @@ export const artists: UnitProps[] = [
     withColle: '9A7aBJBrMuZs2O1HofmGrOnKe6i2',
   },
   {
+    id: 52006,
     name: '寄絃 - Yo2La',
     yomi: '',
     img: {
@@ -732,6 +776,7 @@ export const artists: UnitProps[] = [
     withColle: 'MQK23hLDApMZVrrXJz7J9gdAR5A3',
   },
   {
+    id: 52135,
     name: '夕凪のスピカ',
     yomi: '',
     img: {
@@ -748,6 +793,7 @@ export const artists: UnitProps[] = [
     withColle: 'zbWm77blsFRhG1Y58XrwgAKaon12',
   },
   {
+    id: 52176,
     name: 'ゆにきゅーと',
     img: {
       src: 'https://sekigahara-idolwars.net/2026/yosen/artists/ゆにきゅーと.png',
@@ -762,6 +808,7 @@ export const artists: UnitProps[] = [
     withColle: 'vmBMMyHrrPMjpGsIr3ES88n7rK62',
   },
   {
+    id: 37448,
     name: 'ラビットビット',
     yomi: '',
     img: {
@@ -793,6 +840,7 @@ export const artists: UnitProps[] = [
     withColle: '',
   },
   {
+    id: 52137,
     name: 'LEVEL7',
     yomi: '',
     img: {
@@ -809,6 +857,7 @@ export const artists: UnitProps[] = [
     withColle: '4FjUCjYWa5fL82D2GGV2i9VA2do2',
   },
   {
+    id: 52039,
     name: 'Re:M!ND',
     yomi: 'りまいんど',
     img: {
@@ -825,6 +874,7 @@ export const artists: UnitProps[] = [
     withColle: '2flKNcg7KzPu5ME1WxlaCI9TRls1',
   },
   {
+    id: 51994,
     name: 'わんみゅーず！',
     img: {
       src: 'https://sekigahara-idolwars.net/2026/yosen/artists/わんみゅーず！.png',

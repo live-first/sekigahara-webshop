@@ -16,9 +16,9 @@ export const YosenRankingView = () => {
 
     const rank = tawaraRank.ranking.map((unit): RankingUnit => {
       const artist = artists.find((artist) => artist.name === unit.name) ?? UnitInit
+      console.log(artist.name, metaRank)
       const metaPoint =
-        Object.values(metaRank ?? {}).find((idol) => (idol ? idol.name === artist.name : ''))
-          ?.donate ?? 0
+        Object.values(metaRank ?? {}).find((idol) => idol.id == artist.id)?.donate ?? 0
       const livePoint = unit.live ?? 0
 
       return {
