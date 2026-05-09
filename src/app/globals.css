@@ -4,9 +4,9 @@
   --background: #f1f1f1;
   --foreground: #171717;
   --sekigahara: #e14040;
-  --edo: #ff6464;
-  --owari: #ffbf52;
-  --osaka: #5f7fff;
+  --edo: #fb62a1;
+  --owari: #0000fe;
+  --osaka: #ffff04;
 }
 
 @theme inline {
@@ -16,9 +16,9 @@
   --color-edo: var(--edo);
   --color-edo_bg: #ffbfbf;
   --color-owari: var(--owari);
-  --color-owari_bg: #ffdea5;
+  --color-owari_bg: #bccaff;
   --color-osaka: var(--osaka);
-  --color-osaka_bg: #bccaff;
+  --color-osaka_bg: #eded65;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-font-blue: rgb(120, 200, 204);

@@ -12,7 +12,7 @@ export const edoEvents: YosenAccordionProps[] = [
       "ADMIRAL×BANQUET／Harley Queen／Re:M!ND／ラビットビット／オトメルキュール／I's Merry Go Round／MiDi ON!／@youuuuu!!!／New Crown",
     ticket: 'https://t-dv.com/yosen_edo_1',
     image1: 'https://sekigahara-idolwars.net/2026/yosen/edo/260509_11.jpg',
-    image2: '',
+    image2: 'https://sekigahara-idolwars.net/2026/yosen/edo/260509_12.jpg',
   },
   {
     cName: 'edo',
@@ -24,7 +24,7 @@ export const edoEvents: YosenAccordionProps[] = [
     artists: 'Coloration／ヒップバーン／オトメルキュール／vVibe!／あもるてぃえ／LEVEL7／MiDi ON!',
     ticket: 'https://t-dv.com/yosen_edo_2',
     image1: 'https://sekigahara-idolwars.net/2026/yosen/edo/260510_21.jpg',
-    image2: '',
+    image2: 'https://sekigahara-idolwars.net/2026/yosen/edo/260510_22.jpg',
   },
   {
     cName: 'edo',
@@ -37,7 +37,7 @@ export const edoEvents: YosenAccordionProps[] = [
       "Aproof／Coloration／iROTORiDOLLY／ラビットビット／vVibe!／LEVEL7／I's Merry Go Round／BabyDoll",
     ticket: 'https://t-dv.com/yosen_edo_3',
     image1: 'https://sekigahara-idolwars.net/2026/yosen/edo/260510_31.jpg',
-    image2: '',
+    image2: 'https://sekigahara-idolwars.net/2026/yosen/edo/260510_32.jpg',
   },
   {
     cName: 'edo',
@@ -49,7 +49,7 @@ export const edoEvents: YosenAccordionProps[] = [
     artists: 'Yo2La／BrainBeat／melnoir／Otomeria／NEOTOKYO-TRIBE',
     ticket: 'https://t-dv.com/yosen_edo_4',
     image1: 'https://sekigahara-idolwars.net/2026/yosen/edo/260510_41.jpg',
-    image2: undefined,
+    image2: 'https://sekigahara-idolwars.net/2026/yosen/edo/260510_42.jpg',
   },
   {
     cName: 'edo',
@@ -62,6 +62,6 @@ export const edoEvents: YosenAccordionProps[] = [
       'にとくり。／ひとつキラリ／ADMIRAL×BANQUET／ゆにきゅーと／ヒップバーン／オトメルキュール／Otomeria／あもるてぃえ／NEOTOKYO-TRIBE／MiDi ON!',
     ticket: 'https://t-dv.com/yosen_edo_5',
     image1: 'https://sekigahara-idolwars.net/2026/yosen/edo/260510_51.jpg',
-    image2: '',
+    image2: 'https://sekigahara-idolwars.net/2026/yosen/edo/260510_52.jpg',
   },
 ]

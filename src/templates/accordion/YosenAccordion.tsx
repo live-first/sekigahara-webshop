@@ -4,6 +4,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import { SlArrowDown } from 'react-icons/sl'
 import Link from 'next/link'
 import { Img } from '@/components/Image'
+import { LuExternalLink } from 'react-icons/lu'
 
 export type YosenAccordionProps = {
   cName?: string
@@ -16,10 +17,11 @@ export type YosenAccordionProps = {
   ticket?: string
   image1?: string
   image2?: string
+  image3?: string
 }
 
 export const YosenAccordion = (props: YosenAccordionProps) => {
-  const { cName, title, date, open, start, place, artists, ticket, image1, image2 } = props
+  const { cName, title, date, open, start, place, artists, ticket, image1, image2, image3 } = props
   return (
     <Accordion>
       <AccordionSummary
@@ -49,9 +51,14 @@ export const YosenAccordion = (props: YosenAccordionProps) => {
         {ticket ? (
           <>
             <div className='font-bold'>チケット</div>
-            <div className='pl-2'>
-              <Link target='_blank' href={ticket}>
-                {ticket}
+            <div className='pl-2 py-4'>
+              <Link
+                target='_blank'
+                href={ticket}
+                className={`bg-${cName} p-2 flex rounded-xl items-center justify-center hover:bg-transparent border-${cName} border`}
+              >
+                チケットサイト
+                <LuExternalLink />
               </Link>
             </div>
           </>
@@ -61,6 +68,7 @@ export const YosenAccordion = (props: YosenAccordionProps) => {
         <div className='pt-2'>
           {image1 && <Img src={image1 ?? ''} alt='' />}
           {image2 && <Img src={image2 ?? ''} alt='' />}
+          {image3 && <Img src={image3 ?? ''} alt='' />}
         </div>
       </AccordionDetails>
     </Accordion>
