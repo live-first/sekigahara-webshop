@@ -1,43 +1,47 @@
 import { RankingType, RankingUnit, UnitInit } from '@/domain/ranking'
 import { artists } from '@/resource/2026/yosen/artists'
 import { RankingBox } from '@/templates/rankingBox'
-import { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import { YosenTitle } from '@/components/title/title'
+import { useMetaApi } from '@/api/metaApi'
+import { useTawaraApi } from '@/api/tawaraApi'
 
 export const YosenRankingView = () => {
-  const [ranking, setRanking] = useState<RankingType | null>(null)
+  const { data: metaRank } = useMetaApi()
+  const { data: tawaraRank } = useTawaraApi()
 
-  useEffect(() => {
-    fetch(
-      'https://script.google.com/macros/s/AKfycbzjk6JVQIDUXrRIFCSHqSL5xDPFm5jTnTs16ZCele-A09keIhmgFxZo1j-KlT2jBQupdw/exec',
-      { mode: 'cors' },
-    )
-      .then((response) => response.json())
-      .then((data: RankingType) => {
-        const ranking = data.ranking.map((unit): RankingUnit => {
-          const artist = artists.find((artist) => artist.name === unit.name) ?? UnitInit
-          return {
-            ...unit,
-            name: artist.name,
-            img: artist.img,
-            x: artist.x,
-          }
-        })
-        setRanking({
-          date: data.date,
-          time: data.time,
-          ranking: ranking,
-        })
-      })
-      .catch((error) => {
-        console.error('リクエストエラー:', error)
-      })
-  }, [])
+  const ranking = useMemo(() => {
+    if (!tawaraRank) return null
+
+    const rank = tawaraRank.ranking.map((unit): RankingUnit => {
+      const artist = artists.find((artist) => artist.name === unit.name) ?? UnitInit
+      const metaPoint =
+        Object.values(metaRank ?? {}).find((idol) => (idol ? idol.name === artist.name : ''))
+          ?.donate ?? 0
+      const livePoint = unit.live ?? 0
+
+      return {
+        ...unit,
+        live: livePoint,
+        meta: metaPoint,
+        point: metaPoint + livePoint * 200, // 俵 × 200pt + METALIVEポイント
+        name: artist.name,
+        img: artist.img,
+        x: artist.x,
+      }
+    })
+
+    return {
+      date: tawaraRank.date,
+      time: tawaraRank.time,
+      ranking: rank,
+    }
+  }, [metaRank, tawaraRank])
 
   return (
     <div className='flex flex-col gap-6 pb-40 p-2 md:px-20 lg:px-60'>
-      <YosenTitle title='〜 RANKING 〜' />
+      <YosenTitle title='〜 RANKING 〜' desc='自動更新です。' />
       {ranking && (
         <div className='flex flex-col w-full text-end text-sm text-black py-2'>
           更新日時：{`${ranking.date} ${ranking.time}`}
