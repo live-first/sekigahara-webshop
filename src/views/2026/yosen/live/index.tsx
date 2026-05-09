@@ -31,9 +31,9 @@ export const YosenLiveView = () => {
             onChange={handleChange}
             aria-label='basic tabs example'
           >
-            <Tab className='!text-lg !bg-edo f-textshadow' label='江戸の陣' {...a11yProps(0)} />
-            <Tab className='!text-lg !bg-owari f-textshadow' label='尾張の陣' {...a11yProps(1)} />
-            <Tab className='!text-lg !bg-osaka f-textshadow' label='大阪の陣' {...a11yProps(2)} />
+            <Tab className='!text-lg !bg-edo f-textshadow !text-white' label='江戸の陣' {...a11yProps(0)} />
+            <Tab className='!text-lg !bg-owari f-textshadow !text-white' label='尾張の陣' {...a11yProps(1)} />
+            <Tab className='!text-lg !bg-osaka f-textshadow !text-orange-400' label='大阪の陣' {...a11yProps(2)} />
           </Tabs>
         </Box>
         <CustomTabPanel value={value} index={0}>
