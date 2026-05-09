@@ -1,4 +1,4 @@
-import { RankingType, RankingUnit, UnitInit } from '@/domain/ranking'
+import { RankingUnit, UnitInit } from '@/domain/ranking'
 import { artists } from '@/resource/2026/yosen/artists'
 import { RankingBox } from '@/templates/rankingBox'
 import { useMemo } from 'react'
