@@ -21,7 +21,7 @@ export const Img = (props: ImgProps) => {
     // eslint-disable-next-line @next/next/no-img-element
     <img src={src} alt={alt || ''} className={cn('w-auto', cName)} style={style} />
   ) : (
-    <div className={cName}>
+    <div className={cn(cName, 'relative')}>
       <Image src={src} alt={alt || ''} className={cn('!relative', cName)} style={style} fill />
     </div>
   )

@@ -1,0 +1,69 @@
+.describe {
+  text-align: right;
+}
+.button {
+  border-radius: 20px;
+  padding: 2px 10px;
+  margin-right: 5px;
+  padding: 10px;
+  color: #686363;
+  font-weight: 600;
+  width: 100%;
+  border: 0;
+  margin: 5px;
+  cursor: pointer;
+  font-size: larger;
+}
+.day1 {
+  background-color: #ffcd35;
+}
+.day1:hover {
+  background-color: #c9a41f;
+}
+.day2 {
+  background-color: #89ff35;
+}
+.day2:hover {
+  background-color: #5bc410;
+}
+.day3 {
+  background-color: #35d7ff;
+}
+.day3:hover {
+  background-color: #14afd5;
+}
+.disabled {
+  background-color: #686363;
+  color: #ffffff;
+}
+.modal-md {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  padding: 2em;
+  width: 70%;
+  background-color: #fff;
+  border-radius: 1em;
+  transform: translate(-50%, -50%);
+  outline: transparent;
+  overflow: auto;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
+  background: linear-gradient(135deg, #ffa9f8e6 0%, #fff7ade6 100%) 0px 0px / 100% 100%;
+}
+.artist-box-view {
+  margin: 5px;
+}
+@media (max-width: 550px) {
+  .modal-md {
+    padding: 2em 10px;
+    width: 95%;
+  }
+}

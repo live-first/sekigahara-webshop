@@ -6,14 +6,18 @@ import Link from 'next/link'
 import { Img } from '@/components/Image/index.tsx'
 import { Frame } from '@/components/Frame/index.tsx'
 import { NewsList } from '@/templates/newsList'
-// import { useRouter } from 'next/navigation'
 import { useNewsApi } from '@/api/newsApi'
 import { NewsContentsType } from '@/domain/news'
 import { useEffect, useRef } from 'react'
-// import banner from '@/image/2026/yosenkai2026_hp_banner.jpg'
+import { EllipseButton } from '@/components/button/ellipseButton'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+import yosen_key from '@/image/2026/yosenkai2026_keyvisual_yoko.jpg'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 export const Home2026View = () => {
-  // const router = useRouter()
   const { getNews } = useNewsApi()
   const news: NewsContentsType[] = getNews.data
     ? (getNews.data.contents as unknown as NewsContentsType[])
@@ -24,17 +28,47 @@ export const Home2026View = () => {
     videoRef.current?.play()
   }, [])
 
+  const keyVisuals = [
+    'https://sekigahara-idolwars.net/2026/keyVisuals/関ケ原唄姫合戦2026_第一布陣_告知用.jpg',
+    'https://sekigahara-idolwars.net/2026/keyVisuals/関ケ原唄姫合戦2026_第二布陣_告知用.jpg',
+    'https://sekigahara-idolwars.net/2026/keyVisuals/関ケ原唄姫合戦2026_第三布陣_告知用.jpg',
+    'https://sekigahara-idolwars.net/2026/keyVisuals/関ケ原唄姫合戦2026_第四布陣_告知用.jpg',
+  ]
+
   return (
     <div className='flex flex-col gap-5 pb-10'>
       <div>
-        <video
+        {/* <video
           className='w-full h-full object-cover'
           src='https://lime-light.tv/images/2026/Sekigahara2026_Aori.mp4'
           autoPlay
           muted
           loop
           playsInline
-        ></video>
+        ></video> */}
+        <Swiper
+          modules={[Autoplay, Navigation, Pagination]}
+          pagination={{ clickable: false, el: '#pagination' }}
+          mousewheel={true}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          speed={500}
+          centeredSlides={true}
+          loop={true}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 30,
+            },
+          }}
+        >
+          {keyVisuals.map((data, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <Img src={data} />
+              </SwiperSlide>
+            )
+          })}
+        </Swiper>
       </div>
       <Container maxWidth='md'>
         <div className='flex flex-col gap-8'>
@@ -47,23 +81,19 @@ export const Home2026View = () => {
               </Link>
             </div>
           </div>
-          {/* <div>
-              <ContentTitleView>予戦会情報</ContentTitleView>
-              <Frame>
-                <img
-                  src='https://yosen2025.lime-light.tv/picture/yosen-top.jpeg'
-                  alt='トップ画像'
-                  className='w-full mb-6'
-                />
-                <div className='text-center'>
-                  <Link to='https://yosen2025.lime-light.tv' target='_blank'>
-                    <EllipseButton className='bg-sekigahara text-white hover:bg-[#fe7e7e] px-4 w-52'>
-                      特設サイトへ ▶︎
-                    </EllipseButton>
-                  </Link>
-                </div>
-              </Frame>
-            </div> */}
+          <div>
+            <ContentTitle>予戦会情報</ContentTitle>
+            <Frame>
+              <Img src={yosen_key.src} alt='トップ画像' cName='w-full mb-6' />
+              <div className='flex justify-center'>
+                <Link href='https://yosen2025.lime-light.tv' target='_blank'>
+                  <EllipseButton className='bg-sekigahara text-white hover:bg-[#fe7e7e] px-4 w-52'>
+                    特設サイトへ ▶︎
+                  </EllipseButton>
+                </Link>
+              </div>
+            </Frame>
+          </div>
           {/* <div>
             <ContentTitle>予戦会エントリー</ContentTitle>
             <div className='flex justify-center py-8'>
