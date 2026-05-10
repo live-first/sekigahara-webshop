@@ -86,7 +86,7 @@ export const Home2026View = () => {
             <Frame>
               <Img src={yosen_key.src} alt='トップ画像' cName='w-full mb-6' />
               <div className='flex justify-center'>
-                <Link href='https://yosen2025.lime-light.tv' target='_blank'>
+                <Link href='https://yosen2026.sekigahara-idolwars.net' target='_blank'>
                   <EllipseButton className='bg-sekigahara text-white hover:bg-[#fe7e7e] px-4 w-52'>
                     特設サイトへ ▶︎
                   </EllipseButton>
