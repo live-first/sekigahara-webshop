@@ -21,15 +21,13 @@ export const NewsList = (props: NewsListProps) => {
   const [page, setPage] = useState<number>(1)
   const [displayedItems, setDisplayedItems] = useState<NewsContentsType[]>(news)
 
+  //表示データを抽出
   useEffect(() => {
-    //表示データを抽出
     setDisplayedItems(news.slice((page - 1) * maxContent, page * maxContent))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [page, news, maxContent])
 
   const handleChange = (event: ChangeEvent<unknown>, index: number) => {
     setPage(index)
-    setDisplayedItems(news.slice((index - 1) * maxContent, index * maxContent))
   }
 
   return (
