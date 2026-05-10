@@ -22,8 +22,6 @@ export const YosenRulesView = () => {
           <br />
           関ケ原唄姫合戦2026会場内にのぼり20本展開
           <br />
-          出演日食券30000円分
-          <br />
         </div>
         <Heading tag={4} label='2位' className='text-black' />
         <div className='flex flex-col gap-1 pl-6 py-4 text-black'>
@@ -36,8 +34,6 @@ export const YosenRulesView = () => {
           <br />
           関ケ原唄姫合戦2026会場内にのぼり10本展開
           <br />
-          出演日食券20000円分
-          <br />
         </div>
         <Heading tag={4} label='3位' className='text-black' />
         <div className='flex flex-col gap-1 pl-6 py-4 text-black'>
@@ -49,8 +45,6 @@ export const YosenRulesView = () => {
           関ケ原唄姫合戦2026会場内にパネル展示
           <br />
           関ケ原唄姫合戦2026会場内にのぼり5本展開
-          <br />
-          出演日食券10000円分
           <br />
         </div>
         <Heading tag={4} label='4〜7位' className='text-black' />
