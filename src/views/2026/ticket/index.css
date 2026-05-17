@@ -1,0 +1,25 @@
+.ticket-link-btn {
+  margin: 10px 0 30px 0;
+  padding: 10px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 3px solid #f72494;
+  transition-duration: 0.4s;
+  animation: anime1 0.5s ease 0s infinite alternate;
+  text-decoration: none;
+  font-weight: 700;
+  color: #f72494;
+}
+.ticket-link-btn:hover {
+  background-color: #ff213b;
+  color: #ffffff;
+}
+
+@keyframes anime1 {
+  from {
+    transform: scale(1.03, 0.9);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}

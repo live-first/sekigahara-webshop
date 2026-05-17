@@ -1,8 +1,8 @@
 import { BaseViewLayout } from '@/layouts/BaseViewLayout'
 import { Footer } from '@/views/2026/footer'
 import { Header } from '@/views/2026/header'
-import { CommingSoonView } from '@/views/common/commingSoon/commingSoon'
+import { TicketView } from '@/views/2026/ticket'
 
 export default function Ticket() {
-  return <BaseViewLayout header={<Header />} main={<CommingSoonView />} footer={<Footer />} />
+  return <BaseViewLayout header={<Header />} main={<TicketView />} footer={<Footer />} />
 }

@@ -16,6 +16,7 @@ import yosen_key from '@/image/2026/yosenkai2026_keyvisual_yoko.jpg'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import { ImageContainer } from '@/components/ImageContainer'
 
 export const Home2026View = () => {
   const { getNews } = useNewsApi()
@@ -33,6 +34,9 @@ export const Home2026View = () => {
     'https://sekigahara-idolwars.net/2026/keyVisuals/関ケ原唄姫合戦2026_第二布陣_告知用.jpg',
     'https://sekigahara-idolwars.net/2026/keyVisuals/関ケ原唄姫合戦2026_第三布陣_告知用.jpg',
     'https://sekigahara-idolwars.net/2026/keyVisuals/関ケ原唄姫合戦2026_第四布陣_告知用.jpg',
+    'https://sekigahara-idolwars.net/2026/keyVisuals/関ケ原唄姫合戦2026_第五布陣_告知用.jpg',
+    'https://sekigahara-idolwars.net/2026/keyVisuals/関ケ原唄姫合戦2026_第六布陣_告知用.jpg',
+    'https://sekigahara-idolwars.net/2026/keyVisuals/関ケ原唄姫合戦2026_第七布陣_告知用.jpg',
   ]
 
   return (
@@ -50,8 +54,8 @@ export const Home2026View = () => {
           modules={[Autoplay, Navigation, Pagination]}
           pagination={{ clickable: false, el: '#pagination' }}
           mousewheel={true}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          speed={500}
+          autoplay={{ delay: 8000, disableOnInteraction: false }}
+          speed={1000}
           centeredSlides={true}
           loop={true}
           breakpoints={{
@@ -64,7 +68,7 @@ export const Home2026View = () => {
           {keyVisuals.map((data, index) => {
             return (
               <SwiperSlide key={index}>
-                <Img src={data} />
+                <ImageContainer img={{ src: data }} width='100%' height='800px' />
               </SwiperSlide>
             )
           })}
