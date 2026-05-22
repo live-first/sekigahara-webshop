@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Provider from './Provider'
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: '関ケ原唄姫合戦2026',
@@ -36,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html>
+    <html className={cn("font-sans", geist.variable)}>
       <body>
         <Provider>{children}</Provider>
       </body>

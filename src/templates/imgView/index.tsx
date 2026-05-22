@@ -19,7 +19,6 @@ export const ImgView = (props: ImgProp) => {
     imgUrl,
     width,
     height,
-    iconSize,
     borderRadius,
     fontSize,
     childrenHeight,
