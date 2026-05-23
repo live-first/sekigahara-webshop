@@ -3,46 +3,42 @@
 import Link from 'next/link'
 import './style.css'
 import { BlurText } from '@/components/BlurText'
+import { Img } from '@/components/Image'
 
 export const AboutView = () => {
   const stages = [
     {
       name: '徳川ステージ',
       subtitle: 'TOKUGAWA STAGE',
-      description:
-        '国内で開催されるアイドルフェスでは最大規模のステージ',
+      description: '国内で開催されるアイドルフェスでは最大規模のステージ',
       image: 'https://sekigahara-idolwars.net/2026/about/27.jpg',
       accent: 'from-red-500/40 to-orange-500/20',
     },
     {
       name: '豊臣ステージ',
       subtitle: 'TOYOTOMI STAGE',
-      description:
-        '爽快感溢れるステージ',
+      description: '爽快感溢れるステージ',
       image: 'https://sekigahara-idolwars.net/2026/about/21.jpg',
       accent: 'from-yellow-400/40 to-orange-400/20',
     },
     {
       name: '桃配ステージ',
       subtitle: 'MOMOKUBARI STAGE',
-      description:
-        '目の前を通る新幹線の風を感じるステージ',
+      description: '目の前を通る新幹線の風を感じるステージ',
       image: 'https://sekigahara-idolwars.net/2026/about/4.jpg',
       accent: 'from-pink-400/40 to-purple-500/20',
     },
     {
       name: '戦国ステージ',
       subtitle: 'SENGOKU STAGE',
-      description:
-        '関ケ原の戦いの激戦地に位置する、熱狂のステージ',
+      description: '関ケ原の戦いの激戦地に位置する、熱狂のステージ',
       image: 'https://sekigahara-idolwars.net/2026/about/5.jpg',
       accent: 'from-indigo-500/40 to-blue-500/20',
     },
     {
       name: '下剋上ステージ',
       subtitle: 'GEKOKUJO STAGE',
-      description:
-        '深い渓谷にそびえ立つステージはまさに下剋上',
+      description: '深い渓谷にそびえ立つステージはまさに下剋上',
       image: 'https://sekigahara-idolwars.net/2026/about/18.jpg',
       accent: 'from-green-400/40 to-emerald-500/20',
     },
@@ -128,10 +124,10 @@ export const AboutView = () => {
                   className={`absolute inset-0 bg-gradient-to-tr ${stage.accent} z-10 opacity-80`}
                 ></div>
 
-                <img
+                <Img
                   src={stage.image}
                   alt={stage.name}
-                  className='h-[500px] w-full object-cover transition duration-700 group-hover:scale-110'
+                  cName='h-[500px] w-full object-cover transition duration-700 group-hover:scale-110'
                 />
 
                 <div className='absolute inset-0 bg-black/30 z-20' />
@@ -179,10 +175,10 @@ export const AboutView = () => {
                 key={area.title}
                 className='group relative overflow-hidden rounded-[2rem] min-h-[500px] border border-white/10'
               >
-                <img
+                <Img
                   src={area.image}
                   alt={area.title}
-                  className='absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110'
+                  cName='absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110'
                 />
 
                 <div className='absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent' />

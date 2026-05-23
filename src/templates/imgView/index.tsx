@@ -1,5 +1,6 @@
 import React from 'react'
 import './style.css'
+import { Img } from '@/components/Image'
 
 interface ImgProp {
   children?: React.ReactNode
@@ -14,16 +15,7 @@ interface ImgProp {
 }
 
 export const ImgView = (props: ImgProp) => {
-  const {
-    children,
-    imgUrl,
-    width,
-    height,
-    borderRadius,
-    fontSize,
-    childrenHeight,
-    backImg,
-  } = props
+  const { children, imgUrl, width, height, borderRadius, fontSize, childrenHeight, backImg } = props
 
   const imgHeight = () => {
     return `calc(100% - ${childrenHeight}`
@@ -40,13 +32,8 @@ export const ImgView = (props: ImgProp) => {
     >
       {imgUrl ? (
         <>
-          <img
-            className='event-card-back-img'
-            src={backImg}
-            alt=''
-            style={{ height: imgHeight() }}
-          />
-          <img className='event-card-img' src={imgUrl} alt='' style={{ height: imgHeight() }} />
+          <Img cName='event-card-back-img' src={backImg} alt='' style={{ height: imgHeight() }} />
+          <Img cName='event-card-img' src={imgUrl} alt='' style={{ height: imgHeight() }} />
         </>
       ) : (
         <div className='no-image' style={{ height: imgHeight() }}>

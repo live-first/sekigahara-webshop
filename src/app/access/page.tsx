@@ -1,8 +1,8 @@
 import { BaseViewLayout } from '@/layouts/BaseViewLayout'
+import { AccessView } from '@/views/2026/access'
 import { Footer } from '@/views/2026/footer'
 import { Header } from '@/views/2026/header'
-import { CommingSoonView } from '@/views/common/commingSoon/commingSoon'
 
 export default function Access() {
-  return <BaseViewLayout header={<Header />} main={<CommingSoonView />} footer={<Footer />} />
+  return <BaseViewLayout header={<Header />} main={<AccessView />} footer={<Footer />} />
 }
