@@ -458,6 +458,7 @@ export const artists: UnitProps[] = [
     withColle: 'cuBgyymEpgbfSHqIW7ALcxMaq9X2',
   },
   {
+    id: 56858,
     name: 'NEOTOKYO-TRIBE',
     yomi: '',
     img: {
