@@ -460,14 +460,15 @@ export const artists: UnitProps[] = [
   {
     id: 56858,
     name: 'NEOTOKYO-TRIBE',
-    yomi: '',
+    yomi: 'ネオトラ',
     img: {
       src: 'https://sekigahara-idolwars.net/2026/yosen/artists/NEOTOKYO-TRIBE.jpeg',
       alt: 'NEOTOKYO-TRIBE',
     },
-    content: '',
-    movie: '',
-    x: '',
+    content:
+      '近未来型新感覚オンリーワンアイドル<br />「NEOTOKYO-TRIBE（ネオトラ）」💊⚡<br /><br /><br />“健康優良電脳少女音楽倶楽部” をコンセプトに、<br />Hyperpop / Rock / Future Bass を軸に様々なジャンルを融合した唯一無二のサウンドを展開。<br /><br /><br />WOMB・WWW・SELENEb2 をはじめとする大型会場を連続SOLDで超満員で沸かせる、次世代ライブパフォーマンス集団。🐯⚡<br /><br /><br /><br />電脳と感情が交差する、<br /><br />NEOTOKYO-TRIBE の快進撃を見逃すな。📡⚡⚡⚡<br /><br /><br />X ▶ <a href="https://x.com/NEOTOKYOTRIBE" target="_blank">@NEOTOKYOTRIBE</a><br /><br />関ヶ原メンバー▶︎パニャにゃん/すばるバブkids!!/りんね/夢遊/教祖マキナ様/未遂',
+    movie: 'DS0CKvEAGUs',
+    x: 'NEOTOKYOTRIBE',
     insta: '',
     tiktok: '',
     other: '',
