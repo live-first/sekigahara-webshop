@@ -196,7 +196,7 @@ export const Entry2026DetailView = () => {
             </div>
             <Heading tag={4} label='13〜20位' />
             <div className='flex flex-col gap-1 pl-6 py-4'>
-              2DAYS(2ステージ)出演権
+              1DAY or 2DAYS(2ステージ)出演権
               <br />
             </div>
           </Frame>

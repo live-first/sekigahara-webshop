@@ -59,7 +59,7 @@ export const YosenRulesView = () => {
         </div>
         <Heading tag={4} label='13〜20位' className='text-black' />
         <div className='flex flex-col gap-1 pl-6 py-4 text-black'>
-          2DAYS(2ステージ)出演権
+          1DAY or 2DAYS(2ステージ)出演権
           <br />
         </div>
       </Frame>
