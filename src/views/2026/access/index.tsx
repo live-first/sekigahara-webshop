@@ -3,15 +3,17 @@
 import { Title } from '@/components/title/title'
 import './style.css'
 import { Container } from '@mui/material'
+import { Img } from '@/components/Image'
+import { Heading } from '@/components/Heading'
 
 export const AccessView = () => {
   return (
     <div className=''>
       <Container maxWidth='md'>
         <Title english='ACCESS' japaniese='会場アクセス' />
-        <div className='access-info'>
-          <div className='row'>
-            <div className='text-sekigahara text-lg my-2'>会場</div>
+        <div className='my-4'>
+          <div className='flex flex-col gap-4'>
+            <Heading tag={4} label='桃配運動公園' className='text-sekigahara' />
             <div className='col'>
               <div>桃配運動公園</div>
               <div>〒503-1532 岐阜県不破郡関ケ原町野上1673-11</div>
@@ -28,6 +30,17 @@ export const AccessView = () => {
             style={{ border: 0 }}
             loading='lazy'
           ></iframe>
+        </div>
+        <div className='flex flex-col gap-4 my-4'>
+          <Heading tag={4} label='公共交通機関でお越しの方' className='text-sekigahara' />
+          <Img
+            src='https://sekigahara-idolwars.net/common/access_route.png'
+            alt='関ケ原歌姫合戦2026 アクセス'
+          />
+        </div>
+        <div className='flex flex-col gap-4 my-4'>
+          <Heading tag={4} label='車でお越しの方' className='text-sekigahara' />
+          Coming Soon...
         </div>
       </Container>
     </div>
