@@ -1,15 +1,15 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Container } from '@mui/material'
 import './lineup.css'
-import { ArtistType } from '@/domain/artist.ts'
+import { ArtistResponseType } from '@/domain/artist.ts'
 import { Title } from '@/components/title/title.tsx'
-import { ArtistBoxModal } from '@/templates/modal/ArtistBoxModal.tsx'
+import { ArtistBoxModal } from './ArtistBoxModal'
 
 export const Lineup2026View = () => {
-  const [units] = useState<ArtistType[]>([])
-  const [viewUnits, setViewUnits] = useState<ArtistType[]>([])
+  const [units, setUnit] = useState<ArtistResponseType[]>([])
+  const [viewUnits, setViewUnits] = useState<ArtistResponseType[]>([])
   const [day, setDay] = useState('all')
 
   const onClickDay1 = () => {
@@ -57,6 +57,21 @@ export const Lineup2026View = () => {
     }
   }
 
+  useEffect(() => {
+    fetch(
+      'https://script.google.com/macros/s/AKfycbwPyhxfmgyr95_Wu6UDXUJixC24-3NC2OfM9OrxnYmUg9wKcEx35Z0ss04XZA2uI58v/exec',
+      { mode: 'cors' },
+    )
+      .then((response) => response.json())
+      .then((data: ArtistResponseType[]) => {
+        setUnit(data)
+        setViewUnits(data)
+      })
+      .catch((error) => {
+        console.error('リクエストエラー:', error)
+      })
+  }, [])
+
   return (
     <div className='lineup'>
       <Container maxWidth='lg'>
@@ -67,24 +82,33 @@ export const Lineup2026View = () => {
             <div className='flex py-6'>
               <div className='w-1/3'>
                 <button className={`button day1`} onClick={() => onClickDay1()}>
-                  19日
+                  18日
                 </button>
               </div>
               <div className='w-1/3'>
                 <button className={`button day2`} onClick={() => onClickDay2()}>
-                  20日
+                  19日
                 </button>
               </div>
               <div className='w-1/3'>
                 <button className={`button day3`} onClick={() => onClickDay3()}>
-                  21日
+                  20日
                 </button>
               </div>
             </div>
           )}
           <div className='grid grid-cols-2 sm:grid-cols-3 gap-2 md:gap-6'>
             {viewUnits.map((unit, index) => {
-              return <ArtistBoxModal {...unit} key={index} />
+              return (
+                <ArtistBoxModal
+                  {...unit}
+                  img={{
+                    src: `https://sekigahara-idolwars.net/2026/artists/${unit.img}`,
+                    alt: unit.name,
+                  }}
+                  key={index}
+                />
+              )
             })}
           </div>
         </div>
@@ -92,4 +116,3 @@ export const Lineup2026View = () => {
     </div>
   )
 }
-

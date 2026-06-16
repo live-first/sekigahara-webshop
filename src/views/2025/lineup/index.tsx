@@ -1,17 +1,18 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Container } from '@mui/material'
 import './lineup.css'
 import { BaseView2025 } from '../layout/index.tsx'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
-import { ArtistType } from '@/domain/artist.ts'
+import { ArtistResponseType } from '@/domain/artist.ts'
 import { Title } from '@/components/title/title.tsx'
 import { ArtistBoxModal } from '@/templates/modal/ArtistBoxModal.tsx'
+import { artistsData } from './artists.ts'
 
 const LineUp = () => {
-  const [units, setUnit] = useState<ArtistType[] | null>(null)
-  const [viewUnits, setViewUnits] = useState<ArtistType[] | null>(null)
+  const [units] = useState<ArtistResponseType[] | null>(artistsData)
+  const [viewUnits, setViewUnits] = useState<ArtistResponseType[] | null>(null)
   const [day, setDay] = useState('all')
 
   const onClickDay1 = () => {
@@ -59,30 +60,6 @@ const LineUp = () => {
     }
   }
 
-  useEffect(() => {
-    fetch(
-      'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLjlmzX3wYHGsuT9I77HaLQCDQdZ0mNo4jU6pgdCzTXxTYpoN_C3Dj9ZBN1DIYZ-61C8ResUzVLT_ehdHSvOODMbU8WGZvoUGxTg3O4EdMjtDJWgJ2sC_tw_FVTm8dkYWWS4a_JFTD2GzaTHsmc0Os97gjffFTD2YXD1x_iflWrCh80hd5_INRNWpWJxNCYx0Joa7PPO8Y6EhB2n72VniG5d2cqSnOUTDofatfv_-K5RB1MXhBoa6Be7HDyOS8CkB4QSDQsB7pk_GEfQSeTtVGiaOBp95Qg2IEJcxCnd&lib=Mxcqxjg6QEQs5pFWw4MFI4Hpjz42KUVZk',
-      { mode: 'cors' },
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        const unitData = data.map((unit: ArtistType): ArtistType => {
-          return {
-            ...unit,
-            img: {
-              src: `https://lime-light.tv/images/2025/lineup/${unit.img}`,
-              alt: unit.name,
-            },
-          }
-        })
-        setUnit(unitData)
-        setViewUnits(unitData)
-      })
-      .catch((error) => {
-        console.error('リクエストエラー:', error)
-      })
-  }, [])
-
   return (
     <div className='lineup'>
       <Container maxWidth='lg'>
@@ -111,7 +88,16 @@ const LineUp = () => {
           <div className='grid grid-cols-2 sm:grid-cols-3 gap-2 md:gap-6'>
             {viewUnits ? (
               viewUnits.map((unit, index) => {
-                return <ArtistBoxModal {...unit} key={index} />
+                return (
+                  <ArtistBoxModal
+                    {...unit}
+                    img={{
+                      src: `https://lime-light.tv/images/2025/lineup/${unit.img}`,
+                      alt: unit.name,
+                    }}
+                    key={index}
+                  />
+                )
               })
             ) : (
               <DotLottieReact

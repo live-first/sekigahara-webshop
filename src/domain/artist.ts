@@ -18,3 +18,13 @@ export const UnitInit: ArtistType = {
   day2: null,
   day3: null,
 }
+
+export type ArtistResponseType = {
+  name: string
+  img: string
+  x?: string
+  day1: boolean | null
+  day2: boolean | null
+  day3: boolean | null
+  read?: string
+}

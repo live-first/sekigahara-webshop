@@ -15,7 +15,7 @@ export const ArtistModal = (props: ArtistType) => {
       <div className='flex gap-4 justify-center'>
         {x !== '' && (
           <Link href={`${x}`} target='_blank' className='w-6'>
-            <Img src='https://yosen2025.lime-light.tv/picture/x-logo.png' alt='x' />
+            <Img src='https://lime-light.tv/picture/x-logo.png' alt='x' />
           </Link>
         )}
       </div>
