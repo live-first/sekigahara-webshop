@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import { Container } from '@mui/material'
-import './lineup.css'
 import { ArtistResponseType } from '@/domain/artist.ts'
 import { Title } from '@/components/title/title.tsx'
 import { ArtistBoxModal } from './ArtistBoxModal'
@@ -81,17 +80,17 @@ export const Lineup2026View = () => {
           {units && (
             <div className='flex py-6'>
               <div className='w-1/3'>
-                <button className={`button day1`} onClick={() => onClickDay1()}>
+                <button className='day1 w-full py-2 rounded-full' onClick={() => onClickDay1()}>
                   18日
                 </button>
               </div>
               <div className='w-1/3'>
-                <button className={`button day2`} onClick={() => onClickDay2()}>
+                <button className='day2 w-full py-2 rounded-full' onClick={() => onClickDay2()}>
                   19日
                 </button>
               </div>
               <div className='w-1/3'>
-                <button className={`button day3`} onClick={() => onClickDay3()}>
+                <button className='day3 w-full py-2 rounded-full' onClick={() => onClickDay3()}>
                   20日
                 </button>
               </div>

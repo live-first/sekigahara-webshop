@@ -9,17 +9,17 @@ export const ArtistBox = (props: ArtistType) => {
   return (
     <SlideUpAnimation>
       <div className='flex flex-col p-3 bg-white rounded-sm border border-sekigahara custom-shadow artist-box w-full'>
-        <div className='flex flex-co w-full text-center justify-center overflow-hidden relative lg:h-[250px] md:h-[230px] sm:h-[200px] min-[150px]:h-[150px]'>
+        <div className='flex flex-co w-full text-center justify-center overflow-hidden relative lg:h-[250px] md:h-[230px] sm:h-[200px] min-[150px]:h-[100px]'>
           {/* <Img src={img.src} alt={img.alt} cName='h-full absolute top-0 left-0 object-contain' /> */}
-          <Img src={img.src} alt={img.alt} cName='h-full absolute top-0 left-0 scale-140 translate-y-4' />
+          <Img src={img.src} alt={img.alt} cName='h-full absolute top-0 left-0 scale-150 sm:scale-140 translate-y-2 sm:translate-y-4' />
         </div>
         <div className='text-sekigahara text-md md:text-xl font-bold text-center h-14'>
           <p className='whitespace-pre-wrap h-full content-center leading-5'>{name}</p>
         </div>
         <div className='h-9 py-2 border-t border-t-gray-200 text-start'>
-          {day1 ? <span className='mr-1 py-0.5 px-2 rounded-full bg-[#ffcd35]'>18日</span> : ''}
-          {day2 ? <span className='mr-1 py-0.5 px-2 rounded-full bg-[#89ff35]'>19日</span> : ''}
-          {day3 ? <span className='mr-1 py-0.5 px-2 rounded-full bg-[#35d7ff]'>20日</span> : ''}
+          {day1 ? <span className='mr-1 py-0.5 px-1 rounded-full day1 text-sm'>18日</span> : ''}
+          {day2 ? <span className='mr-1 py-0.5 px-1 rounded-full day2 text-sm'>19日</span> : ''}
+          {day3 ? <span className='mr-1 py-0.5 px-1 rounded-full day3 text-sm'>20日</span> : ''}
         </div>
       </div>
     </SlideUpAnimation>

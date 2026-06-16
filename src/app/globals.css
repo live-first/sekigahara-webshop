@@ -1,6 +1,6 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -171,4 +171,22 @@ body {
   html {
     @apply font-sans;
   }
+}
+.day1 {
+  background-color: #ffcd35;
+}
+.day1:hover {
+  background-color: #c9a41f;
+}
+.day2 {
+  background-color: #89ff35;
+}
+.day2:hover {
+  background-color: #5bc410;
+}
+.day3 {
+  background-color: #35d7ff;
+}
+.day3:hover {
+  background-color: #14afd5;
 }
