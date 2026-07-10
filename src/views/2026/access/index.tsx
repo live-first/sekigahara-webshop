@@ -9,7 +9,7 @@ import { Heading } from '@/components/Heading'
 export const AccessView = () => {
   return (
     <div className=''>
-      <Container maxWidth='md'>
+      <Container maxWidth='md' className='flex flex-col gap-6'>
         <Title english='ACCESS' japaniese='会場アクセス' />
         <div className='my-4'>
           <div className='flex flex-col gap-4'>
@@ -37,10 +37,11 @@ export const AccessView = () => {
             src='https://sekigahara-idolwars.net/common/access_route.png'
             alt='関ケ原歌姫合戦2026 アクセス'
           />
+          <Img src='https://sekigahara-idolwars.net/2026/timetable/bus.jpg' alt='bus' />
         </div>
         <div className='flex flex-col gap-4 my-4'>
           <Heading tag={4} label='車でお越しの方' className='text-sekigahara' />
-          Coming Soon...
+          <Img src='https://sekigahara-idolwars.net/2026/timetable/parking.jpg' alt='parking' />
         </div>
       </Container>
     </div>
