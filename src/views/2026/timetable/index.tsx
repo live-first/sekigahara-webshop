@@ -1,7 +1,6 @@
 'use client'
 
 import { Container } from '@mui/material'
-import html2canvas from 'html2canvas'
 import './timetable.scss'
 import { day1Stage1 } from './day1/stage1.ts'
 import { day1Stage2 } from './day1/stage2.ts'
@@ -19,8 +18,6 @@ import { day3Stage3 } from './day3/stage3.ts'
 import { day3Stage4 } from './day3/stage4.ts'
 import { day3Stage5 } from './day3/stage5.ts'
 import { Title } from '@/components/title/title.tsx'
-import { EllipseButton } from '@/components/button/ellipseButton.tsx'
-import { Img } from '@/components/Image/index.tsx'
 import { TimeTable } from '@/components/TimeTable/index.tsx'
 
 const config = {
@@ -40,44 +37,44 @@ interface date {
   other: string
 }
 
-const saveAsImage = (uri: string) => {
-  const downloadLink = document.createElement('a')
+// const saveAsImage = (uri: string) => {
+//   const downloadLink = document.createElement('a')
 
-  if (typeof downloadLink.download === 'string') {
-    downloadLink.href = uri
+//   if (typeof downloadLink.download === 'string') {
+//     downloadLink.href = uri
 
-    // ファイル名
-    downloadLink.download = 'idol-wars-2026_timetable.png'
+//     // ファイル名
+//     downloadLink.download = 'idol-wars-2026_timetable.png'
 
-    // Firefox では body の中にダウンロードリンクがないといけないので一時的に追加
-    document.body.appendChild(downloadLink)
+//     // Firefox では body の中にダウンロードリンクがないといけないので一時的に追加
+//     document.body.appendChild(downloadLink)
 
-    // ダウンロードリンクが設定された a タグをクリック
-    downloadLink.click()
+//     // ダウンロードリンクが設定された a タグをクリック
+//     downloadLink.click()
 
-    // Firefox 対策で追加したリンクを削除しておく
-    document.body.removeChild(downloadLink)
-  } else {
-    window.open(uri)
-  }
-}
+//     // Firefox 対策で追加したリンクを削除しておく
+//     document.body.removeChild(downloadLink)
+//   } else {
+//     window.open(uri)
+//   }
+// }
 
-const exportPng = (targetId: string) => {
-  // const targetTimetable = document.getElementById('base-view-id')
-  // const targetTimetableArea = document.getElementById('timetable-master')
-  // targetTimetable && (targetTimetable.style.overflow = 'visible')
-  // targetTimetableArea && (targetTimetableArea.style.overflow = 'visible')
-  // 画像に変換する component の id を指定
-  const target = document.getElementById(targetId)
-  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-  target &&
-    html2canvas(target).then((canvas) => {
-      const targetImgUri = canvas.toDataURL('img/png')
-      saveAsImage(targetImgUri)
-    })
-  // targetTimetableArea && (targetTimetableArea.style.overflow = 'scroll')
-  // targetTimetable && (targetTimetable.style.overflow = 'hidden')
-}
+// const exportPng = (targetId: string) => {
+//   // const targetTimetable = document.getElementById('base-view-id')
+//   // const targetTimetableArea = document.getElementById('timetable-master')
+//   // targetTimetable && (targetTimetable.style.overflow = 'visible')
+//   // targetTimetableArea && (targetTimetableArea.style.overflow = 'visible')
+//   // 画像に変換する component の id を指定
+//   const target = document.getElementById(targetId)
+//   // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+//   target &&
+//     html2canvas(target).then((canvas) => {
+//       const targetImgUri = canvas.toDataURL('img/png')
+//       saveAsImage(targetImgUri)
+//     })
+//   // targetTimetableArea && (targetTimetableArea.style.overflow = 'scroll')
+//   // targetTimetable && (targetTimetable.style.overflow = 'hidden')
+// }
 
 export const TimeTable2026View = () => {
   const DateView = (props: date) => {
