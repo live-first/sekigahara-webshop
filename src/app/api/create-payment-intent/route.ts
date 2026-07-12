@@ -20,8 +20,6 @@ export async function POST(req: Request) {
       name: name,
     })
 
-    console.log(`email: ${email}, name: ${name}`)
-
     const customerId = customer.id
 
     const paymentIntent = await stripe.paymentIntents.create({
