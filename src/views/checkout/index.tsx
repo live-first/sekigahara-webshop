@@ -10,16 +10,16 @@ import { returnItems } from '@/data/items/returnItems'
 import { PaymentElement, useStripe, useElements, AddressElement } from '@stripe/react-stripe-js'
 import z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { contact, email, name } from '@/components/schema'
+import { contact, email, name } from '@/domain/schema'
 import { useForm } from 'react-hook-form'
 import { TextFieldForm } from '@/templates/form/TextFieldForm'
 import { TextAreaForm } from '@/templates/form/TextAreaForm'
-import { Button } from '@/components/Button'
 import { Modal } from '@/components/Modal'
 import { useCheckoutPresenter } from '@/presenter/checkoutPreseter'
 import { FaShieldAlt } from 'react-icons/fa'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { Button } from '@/components/button/button'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!)
 
