@@ -6,7 +6,7 @@ import { Elements } from '@stripe/react-stripe-js'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import { useStore } from '@/store/useStore'
 import { ItemContent } from '../returns'
-import { returnItems } from '@/data/items/returnItems'
+import { productItems } from '@/data/items/productItems'
 import { PaymentElement, useStripe, useElements, AddressElement } from '@stripe/react-stripe-js'
 import z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -157,7 +157,7 @@ const SummaryPanel = () => {
       </h3>
       <div className='flex flex-col gap-4 mb-6'>
         {items.map((item, index) => {
-          const data = returnItems.filter((it) => it.id === item.id)[0]
+          const data = productItems.filter((it) => it.id === item.id)[0]
           return (
             <div
               key={index}
