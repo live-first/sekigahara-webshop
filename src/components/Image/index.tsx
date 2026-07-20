@@ -16,7 +16,7 @@ export type ImgProps = ImgType & {
  * @returns
  */
 export const Img = (props: ImgProps) => {
-  const { src, alt, cName, style, notNext = false } = props
+  const { src, alt, cName, style, notNext = true } = props
   return notNext ? (
     // eslint-disable-next-line @next/next/no-img-element
     <img src={src} alt={alt || ''} className={cn('w-auto', cName)} style={style} />

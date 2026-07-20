@@ -5,7 +5,7 @@ import { useEffect, useState, useMemo } from 'react'
 import { Elements } from '@stripe/react-stripe-js'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import { useStore } from '@/store/useStore'
-import { ItemContent } from '../returns'
+import { ItemContent } from '../products'
 import { productItems } from '@/data/items/productItems'
 import { PaymentElement, useStripe, useElements, AddressElement } from '@stripe/react-stripe-js'
 import z from 'zod'
@@ -164,11 +164,11 @@ const SummaryPanel = () => {
               className='flex justify-between items-start border-b border-blue-200 pb-2 last:border-0'
             >
               <div className='flex flex-col'>
-                <p className='font-bold text-gray-700 text-sm'>{data.title || '商品名'}</p>
+                <p className='font-bold text-gray-700 text-sm'>{data.name || '商品名'}</p>
                 <p className='text-xs text-gray-500'>数量: {item.count}</p>
               </div>
               <p className='font-bold text-blue-500 whitespace-nowrap'>
-                {data.amount.toLocaleString()} <span className='text-xs'>円</span>
+                {data.price.toLocaleString()} <span className='text-xs'>円</span>
               </p>
             </div>
           )

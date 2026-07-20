@@ -4,7 +4,7 @@ import { CloudRequest } from '@/api/cloudApi'
 import { useState } from 'react'
 import { init, send } from '@emailjs/browser'
 import { useStore } from '@/store/useStore'
-import { ItemContent } from '@/views/returns'
+import { ItemContent } from '@/views/products'
 
 export const useCheckoutPresenter = () => {
   const [notice, setNotice] = useState<boolean>(false)
