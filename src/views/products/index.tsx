@@ -6,6 +6,7 @@ import logo from '@/image/2026/logo_2026.png'
 import { Button } from '@/components/button/button'
 import { useShopApi } from '@/api/shopApi'
 import { useRouter } from 'next/navigation'
+import { useStore } from '@/store/useStore'
 
 export type ItemContent = {
   id: string
@@ -54,11 +55,14 @@ const ItemPanel = (props: ItemProps) => {
   const { name, image, price, max_count, count, disabled } = props
   const { checkEnablePurchase } = useShopApi()
   const router = useRouter()
+  const stored = useStore('return-items')
 
   const onClickPurchase = async () => {
-    const res = await (await checkEnablePurchase.mutateAsync({ id: props.id })).data
+    // const res = await (await checkEnablePurchase.mutateAsync({ id: props.id })).data
 
+    const res = true
     if (res) {
+      stored.setItem([{ id: props.id, amount: props.price, count: '1' }])
       router.push('/checkout')
     } else {
       alert('購入できませんでした。')

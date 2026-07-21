@@ -26,8 +26,6 @@ export const useCheckoutPresenter = () => {
     }
   }
 
-  const stored = useStore('return-items').getItem()
-  const items = JSON.parse(stored!) as ItemContent[]
   const request = ({
     id,
     name,

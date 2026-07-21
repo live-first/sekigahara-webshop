@@ -22,6 +22,7 @@ import Link from 'next/link'
 import { Button } from '@/components/button/button'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!)
+const DELIVERY_AMOUNT = 800
 
 const ADDRESS_OPTIONS = {
   mode: 'shipping' as const,
@@ -40,7 +41,7 @@ export const CheckoutView = () => {
       ? (JSON.parse(deliveryStored) as { isDelivery: boolean })
       : { isDelivery: true }
 
-    const deliveryAmount = other.isDelivery ? 1000 : 0
+    const deliveryAmount = other.isDelivery ? DELIVERY_AMOUNT : 0
     const amount =
       items?.reduce((sum, item) => {
         return sum + item.amount * Number(item.count) + deliveryAmount
@@ -90,7 +91,8 @@ export const CheckoutView = () => {
             type='button'
             className='bg-gray-500 hover:bg-gray-400 text-white items-center w-full'
             onClick={() => {
-              router.push('/shop')
+              useStore('return-items').clearItem()
+              router.push('/')
             }}
           >
             戻る
@@ -102,7 +104,7 @@ export const CheckoutView = () => {
   return (
     <Elements stripe={stripePromise} options={options}>
       <div className='pb-24 pt-8 px-4 max-w-3xl mx-auto'>
-        <h2 className='text-3xl font-bold text-center text-secondary mb-8 drop-shadow-sm'>
+        <h2 className='text-3xl font-bold text-center text-sekigahara mb-8 drop-shadow-sm'>
           ご購入の手続き
         </h2>
 
@@ -144,7 +146,7 @@ const SummaryPanel = () => {
     ? (JSON.parse(deliveryStored) as { isDelivery: boolean })
     : { isDelivery: true }
 
-  const deliveryAmount = other.isDelivery ? 1000 : 0
+  const deliveryAmount = other.isDelivery ? DELIVERY_AMOUNT : 0
   const totalAmount =
     items?.reduce((sum, item) => {
       return sum + item.amount * Number(item.count) + deliveryAmount
@@ -179,7 +181,7 @@ const SummaryPanel = () => {
               <p className='font-bold text-gray-700 text-sm'>配送料</p>
             </div>
             <p className='font-bold text-blue-500 whitespace-nowrap'>
-              1,000 <span className='text-xs'>円</span>
+              {DELIVERY_AMOUNT.toLocaleString()} <span className='text-xs'>円</span>
             </p>
           </div>
         )}
@@ -206,6 +208,7 @@ const CheckoutForm = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   const PersonSchema = z.object({
+    id: z.string(),
     name: name,
     email: email,
     content: contact,

@@ -16,7 +16,8 @@ export type PurchaseRequest = {
 
 export const useShopApi = () => {
   const queryClient = useQueryClient()
-  const URL = '/api/shop'
+  const URL =
+    'https://script.google.com/macros/s/AKfycbzhUpJpuleikfib_4aNtvPFDBQPZI4Z2U3eYeVaCpqo3TB3SvRE1_WhIAGfIVvT9rRR8Q/exec'
 
   /**
    * 販売状況を取得します
@@ -34,7 +35,10 @@ export const useShopApi = () => {
   const checkEnablePurchase = useMutation({
     mutationFn: (data: { id: string }) => {
       return axios.post(URL, encodeURI(`id=${data.id}`), {
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
       })
     },
     onSuccess: () => {
@@ -48,7 +52,10 @@ export const useShopApi = () => {
         URL,
         encodeURI(`id=${data.id}&name=${data.name}&email=${data.email}&content=${data.content}`),
         {
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
         },
       )
     },
