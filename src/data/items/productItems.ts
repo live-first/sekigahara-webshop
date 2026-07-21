@@ -23,7 +23,7 @@ export const productItems: ProductItemType[] = [
     tax: 0,
     delivery_price: 800,
     max_count: 1,
-    count: 1,
+    count: 0,
   },
   {
     id: 'by1d0cp',

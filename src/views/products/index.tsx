@@ -2,8 +2,10 @@
 
 import { Img } from '@/components/Image'
 import { productItems, ProductItemType } from '@/data/items/productItems'
-import Link from 'next/link'
 import logo from '@/image/2026/logo_2026.png'
+import { Button } from '@/components/button/button'
+import { useShopApi } from '@/api/shopApi'
+import { useRouter } from 'next/navigation'
 
 export type ItemContent = {
   id: string
@@ -36,7 +38,6 @@ export const ProductsView = () => {
               delivery_price={item.delivery_price}
               max_count={item.max_count}
               count={item.count}
-              href={`/${item.id}`}
             />
           )
         })}
@@ -46,12 +47,23 @@ export const ProductsView = () => {
 }
 
 type ItemProps = {
-  href?: string
   disabled?: boolean
 } & ProductItemType
 
 const ItemPanel = (props: ItemProps) => {
-  const { name, image, price, max_count, count, href, disabled } = props
+  const { name, image, price, max_count, count, disabled } = props
+  const { checkEnablePurchase } = useShopApi()
+  const router = useRouter()
+
+  const onClickPurchase = async () => {
+    const res = await (await checkEnablePurchase.mutateAsync({ id: props.id })).data
+
+    if (res) {
+      router.push('/checkout')
+    } else {
+      alert('購入できませんでした。')
+    }
+  }
 
   return disabled ? (
     <div className='flex flex-col gap-2 bg-white w-full rounded-3xl p-6 shadow-lg border border-pink-100 hover:shadow-2xl transition-shadow'>
@@ -64,16 +76,21 @@ const ItemPanel = (props: ItemProps) => {
       )}
     </div>
   ) : (
-    <Link href={href || '#'}>
-      <div className='flex flex-col gap-2 bg-white w-full rounded-3xl p-6 shadow-lg border border-pink-100 hover:shadow-2xl transition-shadow'>
-        <Img src={image ?? logo.src} cName='h-50 object-contain' />
-        {name && <p className='text-lg font-bold leading-6 text-gray-700'>{name}</p>}
-        <div className='h-px w-full bg-gray-100 my-2'></div>
-        <p className=''>{price.toLocaleString()} 円(税込)</p>
-        {max_count === count && (
-          <p className='bg-gray-600 text-white w-full rounded-sm text-center font-bold'>販売終了</p>
-        )}
-      </div>
-    </Link>
+    <div className='flex flex-col gap-2 bg-white w-full rounded-3xl p-6 shadow-lg border border-pink-100 hover:shadow-2xl transition-shadow'>
+      <Img src={image ?? logo.src} cName='h-50 object-contain' />
+      {name && <p className='text-lg font-bold leading-6 text-gray-700'>{name}</p>}
+      <div className='h-px w-full bg-gray-100 my-2'></div>
+      <p className=''>{price.toLocaleString()} 円(税込)</p>
+      {max_count === count ? (
+        <p className='bg-gray-600 text-white w-full rounded-sm text-center font-bold'>販売終了</p>
+      ) : (
+        <Button
+          className='bg-sekigahara py-2 hover:cursor-pointer hover:brightness-110 transition'
+          onClick={onClickPurchase}
+        >
+          購入する
+        </Button>
+      )}
+    </div>
   )
 }

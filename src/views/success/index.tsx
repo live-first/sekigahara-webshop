@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { useStore } from '@/store/useStore'
-import topImage from '@/image/白地図プロローグ.jpg'
+import topImage from '@/image/2026/logo_2026.png'
 import { Img } from '@/components/Image'
 
 export const SuccessView = () => {
