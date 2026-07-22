@@ -58,9 +58,8 @@ const ItemPanel = (props: ItemProps) => {
   const stored = useStore('return-items')
 
   const onClickPurchase = async () => {
-    // const res = await (await checkEnablePurchase.mutateAsync({ id: props.id })).data
+    const res = await (await checkEnablePurchase.mutateAsync({ id: props.id })).data
 
-    const res = true
     if (res) {
       stored.setItem([{ id: props.id, amount: props.price, count: '1' }])
       router.push('/checkout')

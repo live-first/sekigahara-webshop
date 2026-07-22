@@ -31,7 +31,8 @@ const ADDRESS_OPTIONS = {
 
 export const CheckoutView = () => {
   const [clientSecret, setClientSecret] = useState<string | null>(null)
-  const stored = useStore('return-items').getItem()
+  const returnItemsStore = useStore('return-items')
+  const stored = returnItemsStore.getItem()
   const deliveryStored = useStore('other-items').getItem()
   const router = useRouter()
 
@@ -91,7 +92,7 @@ export const CheckoutView = () => {
             type='button'
             className='bg-gray-500 hover:bg-gray-400 text-white items-center w-full'
             onClick={() => {
-              useStore('return-items').clearItem()
+              returnItemsStore.clearItem()
               router.push('/')
             }}
           >
@@ -201,6 +202,7 @@ const CheckoutForm = () => {
   const elements = useElements()
   const router = useRouter()
   const [open, setOpen] = useState<boolean>(false)
+  const returnItemsStore = useStore('return-items')
 
   const { sendNotification, setNotice, sendEmail, setSending, request } = useCheckoutPresenter()
 
@@ -227,7 +229,10 @@ const CheckoutForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const data = request(watch())
+    const cartItems = returnItemsStore.getItem()
+    const parsedCartItems = cartItems ? (JSON.parse(cartItems) as ItemContent[]) : []
+    const selectedId = parsedCartItems[0]?.id ?? ''
+    const data = request({ ...watch(), id: selectedId })
     setLoading(true)
     setErrorMessage(null)
 
