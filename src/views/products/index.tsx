@@ -13,6 +13,17 @@ export type ItemContent = {
   count: string //いくつか
 }
 
+// プロジェクト開始日時
+const startDate = new Date(2026, 6, 25, 21, 0, 0)
+// プロジェクト終了日時
+const endDate = new Date(2026, 8, 30, 22, 0, 0)
+// 現在日時
+const now = new Date()
+// 開始前
+const isBeforeStart = now < startDate
+// 終了後
+const isClosedProject = endDate < now
+
 export const ProductsView = () => {
   return (
     <div className='flex flex-col pt-12 mb-24 pb-24 items-center gap-12'>
@@ -38,7 +49,7 @@ export const ProductsView = () => {
               delivery_price={item.delivery_price}
               max_count={item.max_count}
               count={item.count}
-              disabled={true}
+              disabled={isBeforeStart || isClosedProject}
             />
           )
         })}
@@ -79,7 +90,7 @@ const ItemPanel = (props: ItemProps) => {
         <p className='bg-gray-600 text-white w-full rounded-sm text-center font-bold'>販売終了</p>
       ) : (
         <Button
-          className='bg-sekigahara py-2 hover:cursor-pointer hover:brightness-110 transition'
+          className='bg-sekigahara py-2 disabled:bg-gray-300 disabled:cursor-not-allowed hover:cursor-pointer hover:brightness-110 transition'
           onClick={onClickPurchase}
           disabled={disabled}
         >

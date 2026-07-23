@@ -3,6 +3,7 @@
 import { PurchaseRequest } from '@/api/shopApi'
 import { useState } from 'react'
 import { init, send } from '@emailjs/browser'
+import { productItems } from '@/data/items/productItems'
 
 export const useCheckoutPresenter = () => {
   const [notice, setNotice] = useState<boolean>(false)
@@ -12,7 +13,7 @@ export const useCheckoutPresenter = () => {
     init('IdTWr2VgMdRiCW1AG')
     if (!notice) {
       setNotice(true)
-      await send('service_cloudfunding', 'cloud-fund-notification', data)
+      await send('service_lurdshc', 'sekigahara_notification', data)
     }
   }
 
@@ -20,7 +21,7 @@ export const useCheckoutPresenter = () => {
     init('IdTWr2VgMdRiCW1AG')
     if (!sending) {
       setSending(true)
-      await send('service_cloudfunding', 'cloud-fund-rara', data)
+      await send('service_lurdshc', 'sekigahara_goods', data)
     }
   }
 
@@ -40,6 +41,7 @@ export const useCheckoutPresenter = () => {
       name: name,
       email: email,
       content: content,
+      product: productItems.find((item) => item.id === id)?.name,
     }
   }
 
