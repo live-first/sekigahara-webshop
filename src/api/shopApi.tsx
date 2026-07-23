@@ -12,6 +12,7 @@ export type PurchaseRequest = {
   name: string
   email: string
   content: string
+  product?: string
 }
 
 export const useShopApi = () => {

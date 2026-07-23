@@ -3,6 +3,7 @@
 import { PurchaseRequest } from '@/api/shopApi'
 import { useState } from 'react'
 import { init, send } from '@emailjs/browser'
+import { productItems } from '@/data/items/productItems'
 
 export const useCheckoutPresenter = () => {
   const [notice, setNotice] = useState<boolean>(false)
@@ -40,6 +41,7 @@ export const useCheckoutPresenter = () => {
       name: name,
       email: email,
       content: content,
+      product: productItems.find((item) => item.id === id)?.name,
     }
   }
 
