@@ -12,7 +12,7 @@ export const useCheckoutPresenter = () => {
     init('IdTWr2VgMdRiCW1AG')
     if (!notice) {
       setNotice(true)
-      await send('service_cloudfunding', 'cloud-fund-notification', data)
+      await send('service_lurdshc', 'sekigahara_notification', data)
     }
   }
 
@@ -20,7 +20,7 @@ export const useCheckoutPresenter = () => {
     init('IdTWr2VgMdRiCW1AG')
     if (!sending) {
       setSending(true)
-      await send('service_cloudfunding', 'cloud-fund-rara', data)
+      await send('service_lurdshc', 'sekigahara_goods', data)
     }
   }
 
