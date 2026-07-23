@@ -2,7 +2,6 @@
 
 import { Img } from '@/components/Image'
 import { productItems, ProductItemType } from '@/data/items/productItems'
-import logo from '@/image/2026/logo_2026.png'
 import { Button } from '@/components/button/button'
 import { useShopApi } from '@/api/shopApi'
 import { useRouter } from 'next/navigation'
@@ -39,6 +38,7 @@ export const ProductsView = () => {
               delivery_price={item.delivery_price}
               max_count={item.max_count}
               count={item.count}
+              disabled={true}
             />
           )
         })}
@@ -52,7 +52,7 @@ type ItemProps = {
 } & ProductItemType
 
 const ItemPanel = (props: ItemProps) => {
-  const { name, image, price, max_count, count, disabled } = props
+  const { name, image, price, description, max_count, count, disabled } = props
   const { checkEnablePurchase } = useShopApi()
   const router = useRouter()
   const stored = useStore('return-items')
@@ -68,20 +68,11 @@ const ItemPanel = (props: ItemProps) => {
     }
   }
 
-  return disabled ? (
+  return (
     <div className='flex flex-col gap-2 bg-white w-full rounded-3xl p-6 shadow-lg border border-pink-100 hover:shadow-2xl transition-shadow'>
-      <Img src={image ?? logo.src} cName='h-50 object-contain' />
+      {image && <Img src={image} cName='h-50 object-contain' />}
       {name && <p className='text-lg font-bold leading-6 text-gray-700'>{name}</p>}
-      <div className='h-px w-full bg-gray-100 my-2'></div>
-      <p className=''>{price.toLocaleString()} 円(税込)</p>
-      {max_count === count && (
-        <p className='bg-gray-600 text-white w-full rounded-sm text-center font-bold'>販売終了</p>
-      )}
-    </div>
-  ) : (
-    <div className='flex flex-col gap-2 bg-white w-full rounded-3xl p-6 shadow-lg border border-pink-100 hover:shadow-2xl transition-shadow'>
-      <Img src={image ?? logo.src} cName='h-50 object-contain' />
-      {name && <p className='text-lg font-bold leading-6 text-gray-700'>{name}</p>}
+      {description && <p className='text-gray-500 text-sm'>{description}</p>}
       <div className='h-px w-full bg-gray-100 my-2'></div>
       <p className=''>{price.toLocaleString()} 円(税込)</p>
       {max_count === count ? (
@@ -90,6 +81,7 @@ const ItemPanel = (props: ItemProps) => {
         <Button
           className='bg-sekigahara py-2 hover:cursor-pointer hover:brightness-110 transition'
           onClick={onClickPurchase}
+          disabled={disabled}
         >
           購入する
         </Button>
