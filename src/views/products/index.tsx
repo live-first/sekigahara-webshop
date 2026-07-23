@@ -14,7 +14,7 @@ export type ItemContent = {
 }
 
 // プロジェクト開始日時
-const startDate = new Date(2026, 6, 22, 21, 0, 0)
+const startDate = new Date(2026, 6, 25, 21, 0, 0)
 // プロジェクト終了日時
 const endDate = new Date(2026, 8, 30, 22, 0, 0)
 // 現在日時
@@ -90,7 +90,7 @@ const ItemPanel = (props: ItemProps) => {
         <p className='bg-gray-600 text-white w-full rounded-sm text-center font-bold'>販売終了</p>
       ) : (
         <Button
-          className='bg-sekigahara py-2 hover:cursor-pointer hover:brightness-110 transition'
+          className='bg-sekigahara py-2 disabled:bg-gray-300 disabled:cursor-not-allowed hover:cursor-pointer hover:brightness-110 transition'
           onClick={onClickPurchase}
           disabled={disabled}
         >
